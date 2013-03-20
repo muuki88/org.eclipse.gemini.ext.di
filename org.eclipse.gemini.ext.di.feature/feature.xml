@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.gemini.ext.di.feature"
       label="Gemini e4 DI "
-      version="1.0.0.qualifier">
+      version="1.0.1.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -15,6 +15,10 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
+
+   <url>
+      <update label="mukis updatesite" url="http://p2.mukis.de/org.eclipse.gemini.exti.di"/>
+   </url>
 
    <requires>
       <import plugin="javax.inject" version="1.0.0" match="equivalent"/>
@@ -31,7 +35,7 @@
          id="org.eclipse.gemini.ext.di"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

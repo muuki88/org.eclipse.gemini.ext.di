@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.eclipse.gemini.ext.di.feature_1.0.0.qualifier.jar" id="org.eclipse.gemini.ext.di.feature" version="1.0.0.qualifier">
+   <feature url="features/org.eclipse.gemini.ext.di.feature_1.0.1.qualifier.jar" id="org.eclipse.gemini.ext.di.feature" version="1.0.1.qualifier">
       <category name="org.eclipse.gemini.ext.di"/>
    </feature>
    <category-def name="org.eclipse.gemini.ext.di" label="Gemini DI Extension"/>
