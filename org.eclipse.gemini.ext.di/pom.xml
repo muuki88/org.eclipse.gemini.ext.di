@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.eclipse.gemini.ext.di</groupId>
     <artifactId>org.eclipse.gemini.ext.di.parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>org.eclipse.gemini.ext.di</artifactId>
   <packaging>eclipse-plugin</packaging>
