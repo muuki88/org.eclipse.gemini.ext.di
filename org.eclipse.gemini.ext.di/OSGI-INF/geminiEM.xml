@@ -7,4 +7,5 @@
    <property name="dependency.injection.annotation" type="String" value="org.eclipse.gemini.ext.di.GeminiPersistenceContext"/>
    <reference bind="bindEntityManagerFactory" cardinality="0..n" interface="javax.persistence.EntityManagerFactory" name="EntityManagerFactory" policy="dynamic" unbind="unbindEntityManagerFactory"/>
    <reference bind="bindEntityManagerFactoryBuilder" cardinality="0..n" interface="org.osgi.service.jpa.EntityManagerFactoryBuilder" name="EntityManagerFactoryBuilder" policy="dynamic" unbind="unbindEntityManagerFactoryBuilder"/>
+   <reference bind="bindPreferencesService" cardinality="0..1" interface="org.eclipse.core.runtime.preferences.IPreferencesService" name="IPreferencesService" policy="dynamic" unbind="unbindPreferencesService"/>
 </scr:component>
