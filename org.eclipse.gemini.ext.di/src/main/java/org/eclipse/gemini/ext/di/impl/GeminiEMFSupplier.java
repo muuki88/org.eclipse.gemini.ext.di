@@ -243,16 +243,14 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
     /* ========== Simple Debugging Options ============ */
     /* ================================================ */
 
-    // TODO GeminiEMFSupplier: Use proper logging infrastructure
-
     protected void trace(String str) {
         if (!trace) {
             return;
         }
-        System.err.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
+        System.out.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
     }
 
     protected void error(String str) {
-        System.err.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
+        System.out.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
     }
 }
