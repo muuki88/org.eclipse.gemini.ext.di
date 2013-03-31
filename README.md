@@ -63,6 +63,11 @@ private EntityManager em;
 ## Sample application
 
 A complete sample application can be found [here](https://github.com/muuki88/e4GeminiJPA).
+It contains examples for
+
+* Statically injected contexts
+* Dynamically injected contextes
+* Handling changing preferences with DAOs
 
 ## Note
 
