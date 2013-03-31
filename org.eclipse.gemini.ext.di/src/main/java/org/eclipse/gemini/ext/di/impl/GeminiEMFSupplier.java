@@ -71,7 +71,7 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
 
         EntityManagerFactoryBuilder emfb = lookupEntityManagerFactoryBuilder(unitName);
         if (emfb == null) {
-            error("EntityManagerFactoryBuilder is null...");
+            error("EntityManagerFactoryBuilder is null for unit '" + unitName + "' with properties " + emProperties);
             return null;
         }
 
@@ -80,9 +80,8 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
             EntityManagerFactory emf = emfb.createEntityManagerFactory(emProperties);
             emfs.put(unitName, emf);
             return emf;
-
         } catch (Exception e) {
-            e.printStackTrace();
+            error("Could not create EntityManagerFactory for unit '" + unitName + "' with properties " + emProperties, e);
             return null;
         }
     }
@@ -185,8 +184,13 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
 
         for (IRequestor requestor : reqs) {
             if (requestor.isValid()) {
-                requestor.resolveArguments(false);
-                validReqs.add(requestor);
+                try {
+                    requestor.resolveArguments(false);
+                    validReqs.add(requestor);
+                } catch (IllegalStateException e) {
+                    error("Error on reinjecting dependencies: " + e.getMessage());
+                }
+
             }
         }
         requestors.put(pUnit, validReqs);
@@ -247,10 +251,14 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
         if (!trace) {
             return;
         }
-        System.out.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
+        System.out.println("[GEMINI_EXT][TRACE][" + getClass().getSimpleName() + "] " + str);
     }
 
     protected void error(String str) {
-        System.out.println("[GEMINI_EXT][" + getClass().getSimpleName() + "] " + str);
+        System.out.println("[GEMINI_EXT][ERROR][" + getClass().getSimpleName() + "] " + str);
+    }
+
+    protected void error(String str, Throwable e) {
+        error(str + "\n  Exception message: " + e.getMessage());
     }
 }

@@ -8,21 +8,23 @@
  *     Filipp A. - Initial implementation
  *******************************************************************************/
 package org.eclipse.gemini.ext.di;
-import java.lang.annotation.Target;
+
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
 import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
 import org.eclipse.e4.core.di.extensions.Preference;
-import static java.lang.annotation.RetentionPolicy.*;
 
 @Target({})
 @Retention(RUNTIME)
-@SuppressWarnings("restriction")
 public @interface GeminiPersistenceProperty {
 
-	/** The name of the property */
-	String name();
+    /** The name of the property */
+    String name();
 
-	/** The value of the property */
-	String value() default "";
+    /** The value of the property */
+    String value() default "";
 
-	Preference valuePref() default @Preference(value="", nodePath="");
+    Preference valuePref() default @Preference(value = "", nodePath = "");
 }
