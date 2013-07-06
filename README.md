@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/muuki88/org.eclipse.gemini.ext.di.png?branch=master)](https://travis-ci.org/muuki88/org.eclipse.gemini.ext.di)
+
 ## Goal
 
 Add the ability to inject EntityManagers for a certain
