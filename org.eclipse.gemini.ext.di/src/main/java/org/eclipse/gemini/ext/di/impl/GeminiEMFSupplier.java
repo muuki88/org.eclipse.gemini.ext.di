@@ -53,7 +53,10 @@ public class GeminiEMFSupplier extends ExtendedObjectSupplier {
 	}
 
 	protected EntityManagerFactory getEMF(String unitName, Map<String, Object> emProperties) {
-		if (emProperties.containsKey(GeminiPersistenceProperties.GEMINI_REINIT)) {
+		Object reinit = emProperties.get(GeminiPersistenceProperties.GEMINI_REINIT);
+		if (reinit != null && Boolean.parseBoolean(reinit.toString())) {
+			trace("Reinit was set. Reconnecting...");
+			System.err.println("REINIT ME!");
 			if (emfs.get(unitName) != null) {
 				emfs.get(unitName).close();
 				emfs.remove(unitName);
